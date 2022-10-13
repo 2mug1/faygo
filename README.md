@@ -1,8 +1,8 @@
 # faygo
-
+依存関係を書き出さなくても、ダウンロードすることで使用できるようにするライブラリ
 ## Getting Started
 
-### Installation
+### インストール
 
 `pom.xml`
 ```xml
@@ -30,7 +30,7 @@ dependencies {
 }
 ```
 
-### Example Code
+### コード例
 ```java
 public class Example extends JavaPlugin {
 
