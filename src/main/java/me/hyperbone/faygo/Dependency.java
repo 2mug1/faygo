@@ -67,7 +67,7 @@ public class Dependency {
         }
     }
 
-    private void load(File file) {
+    private void load(File file) {;
         loader.loadDependency(file);
     }
 

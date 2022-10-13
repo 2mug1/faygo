@@ -1,5 +1,6 @@
 package me.hyperbone.faygo;
 
+import org.bukkit.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -28,6 +29,7 @@ class DependencyLoader {
             method.setAccessible(true);
             method.invoke(classLoader, file.toURI().toURL());
             loadedFiles.add(file);
+            Faygo.sendConsoleMessage(ChatColor.AQUA + file.getName() + "を読み込みました！");
         } catch (ClassCastException | NoSuchMethodException | MalformedURLException | IllegalAccessException |
                  InvocationTargetException ignored) {
         }

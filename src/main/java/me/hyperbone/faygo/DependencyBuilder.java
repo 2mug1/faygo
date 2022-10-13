@@ -9,7 +9,7 @@ public class DependencyBuilder {
 
     private static final List<Dependency> dependencies = new ArrayList<>();
 
-    public @NotNull DependencyBuilder addDependency(Dependency dependency) {
+    public DependencyBuilder addDependency(Dependency dependency) {
         dependencies.add(dependency);
         return this;
     }
