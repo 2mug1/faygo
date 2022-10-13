@@ -11,6 +11,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 class DependencyLoader {
 
@@ -32,6 +33,7 @@ class DependencyLoader {
             Faygo.sendConsoleMessage(ChatColor.AQUA + file.getName() + "の読み込みが完了しました！");
         } catch (ClassCastException | NoSuchMethodException | MalformedURLException | IllegalAccessException |
                  InvocationTargetException ex) {
+            Faygo.sendConsoleMessage(Level.WARNING, file.getName() + "の読み込みに失敗しました。 - " + ex);
         }
     }
 }

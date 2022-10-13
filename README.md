@@ -15,7 +15,7 @@
 <dependency>
   <groupId>me.hyperbone</groupId>
   <artifactId>faygo</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -26,7 +26,7 @@ repositories {
   maven (url = "https://maven.pkg.github.com/2mug1/faygo")
 }
 dependencies {
-  implementation("me.hyperbone:faygo:1.0.0")
+  implementation("me.hyperbone:faygo:1.0.2")
 }
 ```
 
@@ -36,19 +36,18 @@ public class Example extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Faygo faygo = new Faygo(this);
-        faygo.getDependencyBuilder()
-                .addDependency(new Dependency(
+        new Faygo(this).getDependencyBuilder()
+                .add(new Dependency(
                         Repository.MAVENCENTRAL,
                         "redis.clients",
                         "jedis",
                         "4.3.0"))
-                .addDependency(new Dependency(
+                .add(new Dependency(
                         "https://libraries.minecraft.net",
                         "com.mojang",
                         "brigadier",
                         "1.0.18"))
-                .loadDependencies();
+                .load();
     }
 }
 ```

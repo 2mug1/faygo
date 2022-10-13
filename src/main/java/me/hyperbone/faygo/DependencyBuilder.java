@@ -7,12 +7,12 @@ public class DependencyBuilder {
 
     private static final List<Dependency> dependencies = new ArrayList<>();
 
-    public DependencyBuilder addDependency(Dependency dependency) {
+    public DependencyBuilder add(Dependency dependency) {
         dependencies.add(dependency);
         return this;
     }
 
-    public void loadDependencies() {
+    public void load() {
         dependencies.forEach(Dependency::downloadAndLoad);
     }
 }
