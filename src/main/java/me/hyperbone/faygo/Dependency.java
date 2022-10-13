@@ -75,12 +75,12 @@ public class Dependency {
         File dir = new File(Faygo.getPath());
         if (!dir.exists()) dir.mkdirs();
 
-        File file = new File(Faygo.getPath() + "/" + getJarName());
+        File file = new File(Faygo.getPath() + File.separator + getJarName());
         if (file.exists()) return file;
 
         Faygo.sendConsoleMessage(ChatColor.GOLD + "ダウンロード開始: " + ChatColor.YELLOW + name + " v" + version);
 
-        try (FileOutputStream outputStream = new FileOutputStream(Faygo.getPath() + "/" + getJarName())) {
+        try (FileOutputStream outputStream = new FileOutputStream(Faygo.getPath() + File.separator + getJarName())) {
             outputStream.getChannel().transferFrom(Channels.newChannel(new URL(getDownloadURL()).openStream()), 0, Long.MAX_VALUE);
             Faygo.sendConsoleMessage(ChatColor.GREEN + "ダウンロードが完了しました！");
         } catch (IOException ex) {

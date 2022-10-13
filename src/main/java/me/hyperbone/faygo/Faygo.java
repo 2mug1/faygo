@@ -4,6 +4,8 @@ import lombok.Getter;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+
 public class Faygo {
 
     @Getter
@@ -15,7 +17,7 @@ public class Faygo {
 
     public Faygo(Plugin plugin) {
         Faygo.plugin = plugin;
-        path = plugin.getDataFolder().getParent() + "/" + plugin.getDescription().getName() + "/" + "libraries";
+        path = plugin.getDataFolder().getParent() + File.separator + plugin.getDescription().getName() + File.separator + "libraries";
     }
 
     public Faygo(Plugin plugin, String path) {
