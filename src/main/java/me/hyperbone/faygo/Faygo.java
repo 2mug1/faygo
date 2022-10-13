@@ -2,9 +2,9 @@ package me.hyperbone.faygo;
 
 import lombok.Getter;
 import org.bukkit.plugin.Plugin;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.logging.Level;
 
 public class Faygo {
 
@@ -26,6 +26,10 @@ public class Faygo {
     }
 
     public static void sendConsoleMessage(String message) {
-        plugin.getServer().getConsoleSender().sendMessage(message);
+        plugin.getLogger().info(message);
+    }
+
+    public static void sendConsoleMessage(Level level, String message) {
+        plugin.getLogger().log(level, message);
     }
 }

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.channels.Channels;
+import java.util.logging.Level;
 
 public class Dependency {
 
@@ -67,7 +68,7 @@ public class Dependency {
         }
     }
 
-    private void load(File file) {;
+    private void load(File file) {
         loader.loadDependency(file);
     }
 
@@ -85,8 +86,8 @@ public class Dependency {
             Faygo.sendConsoleMessage(ChatColor.GREEN + "ダウンロードが完了しました！");
         } catch (IOException ex) {
             if (ex instanceof FileNotFoundException) {
-                Faygo.sendConsoleMessage(ChatColor.RED + "ダウンロードに失敗しました！指定されたリポジトリは既に削除されている可能性があります！");
-                Faygo.sendConsoleMessage(ChatColor.RED + "リポジトリの設定が正しいか確認してください。");
+                Faygo.sendConsoleMessage(Level.WARNING, ChatColor.RED + "ダウンロードに失敗しました！指定されたリポジトリは既に削除されている可能性があります！");
+                Faygo.sendConsoleMessage(Level.WARNING, ChatColor.RED + "リポジトリの設定が正しいか確認してください。");
             } else {
                 ex.printStackTrace();
             }

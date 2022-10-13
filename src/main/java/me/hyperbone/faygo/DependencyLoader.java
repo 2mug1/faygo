@@ -23,15 +23,16 @@ class DependencyLoader {
 
     public void loadDependency(@NotNull File file) {
         if (loadedFiles.contains(file)) return;
+
         try {
-            URLClassLoader classLoader = (URLClassLoader)ClassLoader.getSystemClassLoader();
             Method method = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
             method.setAccessible(true);
-            method.invoke(classLoader, file.toURI().toURL());
+            method.invoke(urlClassLoader, file.toURI().toURL());
             loadedFiles.add(file);
-            Faygo.sendConsoleMessage(ChatColor.AQUA + file.getName() + "を読み込みました！");
+            Faygo.getPlugin().getLogger().info(ChatColor.AQUA + file.getName() + "の読み込みが完了しました！");
+            Faygo.sendConsoleMessage(ChatColor.AQUA + file.getName() + "の読み込みが完了しました！");
         } catch (ClassCastException | NoSuchMethodException | MalformedURLException | IllegalAccessException |
-                 InvocationTargetException ignored) {
+                 InvocationTargetException ex) {
         }
     }
 }
