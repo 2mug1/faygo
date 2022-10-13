@@ -1,5 +1,7 @@
 package me.hyperbone.faygo;
 
+import lombok.Getter;
+
 public enum Repository {
 
     JITPACK("https://jitpack.io/%s.jar"),
@@ -7,13 +9,10 @@ public enum Repository {
     SONATYPE("https://search.maven.org/remotecontent?filepath=%s.jar"),
     CUSTOM("repo/%s.jar");
 
+    @Getter
     private final String repositoryURL;
 
     Repository(String repositoryURL) {
         this.repositoryURL = repositoryURL;
-    }
-
-    public String getRepositoryURL() {
-        return repositoryURL;
     }
 }
