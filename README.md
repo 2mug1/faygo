@@ -1,4 +1,4 @@
-# Faygo
+# faygo
 
 ## Getting Started
 
