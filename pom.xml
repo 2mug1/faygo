@@ -8,7 +8,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/2mug1/hakobi</url>
+            <url>https://maven.pkg.github.com/2mug1/faygo</url>
         </repository>
     </distributionManagement>
 
