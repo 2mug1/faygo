@@ -47,7 +47,6 @@ public class Dependency {
 
     private String getDownloadURL() {
         final String repo = String.format(repository.getRepositoryURL(), group.replace('.', '/') + "/" + name + "/" + version + "/" + name + "-" + version);
-
         if (customRepository) {
             if (repositoryURL == null) {
                 Faygo.sendConsoleMessage(ChatColor.RED + "リポジトリのURLが無効です！プラグインを無効にします...");
@@ -55,7 +54,6 @@ public class Dependency {
             }
             return repo.replace("repo", repositoryURL);
         }
-
         return repo;
     }
 

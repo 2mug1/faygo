@@ -29,7 +29,6 @@ class DependencyLoader {
             method.setAccessible(true);
             method.invoke(urlClassLoader, file.toURI().toURL());
             loadedFiles.add(file);
-            Faygo.getPlugin().getLogger().info(ChatColor.AQUA + file.getName() + "の読み込みが完了しました！");
             Faygo.sendConsoleMessage(ChatColor.AQUA + file.getName() + "の読み込みが完了しました！");
         } catch (ClassCastException | NoSuchMethodException | MalformedURLException | IllegalAccessException |
                  InvocationTargetException ex) {
